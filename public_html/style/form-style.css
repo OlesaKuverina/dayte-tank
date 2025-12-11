@@ -1,0 +1,155 @@
+:root {
+    --primary: #ff6b95;
+    --secondary: #ffd166;
+    --bg-dark: #0a0a0a;
+    --bg-card: rgba(15, 15, 15, 0.9);
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+}
+
+body {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+
+}
+
+main {
+    font-family: Arial, sans-serif;
+    max-width: 500px;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--secondary);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+select,
+textarea {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #e55a81;
+}
+
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid var(--primary);
+    color: var(--text-light);
+    border-radius: 8px;
+    background-color: var(--bg-card);
+}
+
+#result h3 {
+    color: var(--secondary);
+    margin-top: 0;
+}
+
+.error {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: -8px;
+    margin-bottom: 10px;
+}
+
+.container {
+    margin: 20px auto;
+    width: 300px;
+}
+
+.screen {
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    height: 70px;
+    width: 100%;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(255, 107, 149, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.seat {
+    background-color: #444451;
+    height: 30px;
+    width: 30px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.seat:hover {
+    transform: scale(1.1);
+}
+
+.seat.selected {
+    background-color: var(--secondary);
+}
+
+/* .seat.occupied {
+    background-color: #ff6b95;
+    cursor: not-allowed;
+} */
+
+.concert-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.text {
+    margin-top: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#concert {
+    font-size: 16px;
+    padding: 8px;
+}
+
+.concert-info {
+    background: var(--bg-card);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0;
+    border-left: 4px solid var(--primary);
+}

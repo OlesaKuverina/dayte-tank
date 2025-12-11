@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация на концерт</title>
+    <link rel="stylesheet" href="../style/form-style.css">
+    <link rel="stylesheet" href="../style/head-and-footer.css">
+</head>
+
+<body>
+    <header>
+        <div class="full">
+            <nav>
+                <a href="../index.html">
+                    <div class="logo"><img src="../img/dayte-tank.svg" alt="Логотип группы Дайте Танк" loading="lazy">
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html" class="active">Главная</a>
+                    <a href="../pages/albums.html">Альбомы</a>
+                    <a href="../pages/videos.html">Видео</a>
+                    <a href="../pages/concerts.html">Концерты</a>
+                    <a href="../pages/about.html">О группе</a>
+                </div>
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-overlay"></div>
+            </nav>
+    </header>
+    <main>
+        <h1>Регистрация на концерт</h1>
+
+        <form action="" method="post">
+            <label for="contactName">Ваше имя:</label>
+            <input type="text" id="contactName" name="name" required>
+            <div id="nameError" class="error"></div>
+
+            <label for="contactEmail">Email:</label>
+            <input type="email" id="contactEmail" name="email" required>
+            <div id="emailError" class="error"></div>
+
+            <label for="date">Дата концерта:</label>
+            <input type="date" id="date" name="date" required>
+            <div id="dateError" class="error"></div>
+
+            <div class="concert-container">
+                <label for="concert">Выберите концерт:</label>
+                <select id="concert" required>
+                    <option value="">Выберите концерт</option>
+                    <option value="50">Дайте-Танк(!) 27сент VK Stadium ($50)</option>
+                    <option value="75">Дайте-Танк(!) 20сент A2 Creen Concert ($75)</option>
+                    <option value="60">Дайте-Танк(!) 19сент A2 Creen Concert ($60)</option>
+                    <option value="45">Дайте-Танк(!) 06сент VK Stadium ($45)</option>
+                    <option value="80">Дайте-Танк(!) 26апр VK Stadium ($80)</option>
+                </select>
+                <div id="concertError" class="error"></div>
+            </div>
+
+            <div class="concert-info">
+                <p><strong>Сцена:</strong></p>
+                <div class="container">
+                    <div class="screen">СЦЕНА</div>
+
+                    <div class="row">
+                        <div class="seat" data-seat="A1"></div>
+                        <div class="seat" data-seat="A2"></div>
+                        <div class="seat" data-seat="A3"></div>
+                        <div class="seat" data-seat="A4"></div>
+                        <div class="seat" data-seat="A5"></div>
+                        <div class="seat" data-seat="A6"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="seat" data-seat="B1"></div>
+                        <div class="seat" data-seat="B2"></div>
+                        <div class="seat" data-seat="B3"></div>
+                        <div class="seat" data-seat="B4"></div>
+                        <div class="seat" data-seat="B5"></div>
+                        <div class="seat" data-seat="B6"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="seat" data-seat="C1"></div>
+                        <div class="seat" data-seat="C2"></div>
+                        <div class="seat" data-seat="C3"></div>
+                        <div class="seat" data-seat="C4"></div>
+                        <div class="seat" data-seat="C5"></div>
+                        <div class="seat" data-seat="C6"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="seat" data-seat="D1"></div>
+                        <div class="seat" data-seat="D2"></div>
+                        <div class="seat" data-seat="D3"></div>
+                        <div class="seat" data-seat="D4"></div>
+                        <div class="seat" data-seat="D5"></div>
+                        <div class="seat" data-seat="D6"></div>
+                    </div>
+                </div>
+
+                <p class="text">Вы выбрали <span id="count">0</span> мест(а) на сумму $<span id="total">0</span></p>
+            </div>
+
+            <button type="button" id="registerButton">Зарегистрироваться на концерт</button>
+        </form>
+        <div id="result"></div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Дайте Танк</div>
+            <div class="email-subscription">
+                <input type="email" required id="email" name="email" placeholder="Ваш email" autocomplete="email">
+                <button type="submit">Подписаться</button>
+            </div>
+            <div class="footer-links">
+                <a href="#hero">Главная</a>
+                <a href="#albums">Музыка</a>
+                <a href="#tour">Концерты</a>
+                <a href="#about">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Дайте Танк. Все права защищены.
+            </div>
+        </div>
+    </footer>
+    <script src="../js/form-js.js"></script>
+    <script src="../js/script-1.js"></script>
+    </div>
+
+</body>
+
+</html>
