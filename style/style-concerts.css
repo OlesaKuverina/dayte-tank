@@ -1,0 +1,374 @@
+/* ======================================= */
+/* Стили для страницы Концерты (concerts.css) */
+/* Использует переменные из style.css */
+/* ======================================= */
+
+/* ------------------- */
+/* Общие заголовки */
+/* ------------------- */
+
+#concerts-hero {
+    padding: clamp(2rem, 5vw, 4rem) 20px;
+    text-align: center;
+}
+
+.concerts-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    /* Неоновый эффект тени */
+    text-shadow: 0 0 15px rgba(255, 107, 149, 0.7); 
+    font-weight: 700;
+}
+
+.page-title p {
+    color: var(--text-gray);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+.section-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--secondary); /* Желтый акцент */
+    margin: 3rem 0 1.5rem;
+    text-align: center;
+    border-bottom: 2px solid rgba(255, 209, 102, 0.2);
+    padding-bottom: 10px;
+    text-shadow: 0 0 8px rgba(255, 209, 102, 0.3);
+}
+
+/* ------------------- */
+/* Ближайшие концерты (List View) */
+/* ------------------- */
+
+.concerts-list {
+    max-width: 900px;
+    margin: 0 auto 4rem;
+}
+
+.concert-card {
+    display: flex;
+    align-items: center;
+    background: var(--bg-card); 
+    padding: 1.5rem 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 107, 149, 0.1); 
+    transition: all 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.concert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(255, 107, 149, 0.2);
+    border-color: var(--primary);
+}
+
+.concert-date {
+    flex: 0 0 120px; 
+    text-align: center;
+    margin-right: 2rem;
+    padding-right: 20px;
+    /* Вертикальный разделитель с неоновым акцентом */
+    border-right: 1px solid rgba(255, 107, 149, 0.3); 
+}
+
+.date-day {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary); 
+    line-height: 1;
+}
+
+.date-month, .date-year {
+    display: block;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+.date-month {
+    color: var(--text-light);
+}
+
+.concert-info {
+    flex: 1;
+}
+
+.concert-info h3 {
+    color: var(--text-light);
+    font-size: 1.3rem;
+    text-transform: uppercase;
+}
+
+.venue {
+    color: var(--secondary);
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.support {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.concert-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 20px;
+}
+
+/* ВТОРИЧНАЯ КНОПКА (Я ИДУ / СМОТРЕТЬ ФОТО) */
+.btn-secondary {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--secondary);
+    border-radius: 25px;
+    background: transparent;
+    color: var(--secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 209, 102, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 209, 102, 0.3);
+}
+
+/* ------------------- */
+/* Архив концертов (Grid View) */
+/* ------------------- */
+
+.concerts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 4rem;
+}
+
+.past-concert-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 107, 149, 0.05);
+}
+
+.past-concert-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(255, 107, 149, 0.2);
+}
+
+.concert-photo img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s;
+}
+
+.past-concert-card:hover .concert-photo img {
+    transform: scale(1.05);
+}
+
+.concert-details {
+    padding: 1.5rem;
+}
+
+.concert-details h3 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+.concert-details .venue {
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.concert-details .date {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.attendance {
+    color: var(--secondary); 
+    font-weight: 700;
+    margin: 1rem 0 1.5rem;
+}
+
+/* --- Стили для Модального Окна Галереи --- */
+
+.modal {
+    display: none; /* Сначала скрыто */
+    position: fixed;
+    z-index: 1000; /* Поверх всех элементов */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Темный полупрозрачный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #252525; /* Темный фон, как у плеера */
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
+    position: relative;
+    color: #f0f0f0;
+}
+
+.modal-content h3 {
+    text-align: center;
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+/* Кнопка закрытия */
+.close-btn {
+    color: #f0f0f0;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #ff4081;
+    text-decoration: none;
+}
+
+/* Контейнер для фото */
+.gallery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    max-height: 70vh; /* Ограничиваем высоту для скролла */
+    overflow-y: auto;
+}
+
+.gallery-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s;
+}
+
+.gallery-photo:hover {
+    transform: scale(1.02);
+}
+
+/* --- Стили для модального окна полного просмотра фото --- */
+
+#full-photo-modal {
+    display: none; /* Изначально скрыто */
+    position: fixed;
+    z-index: 2000; /* Очень высокий z-index, чтобы быть над галереей */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95); /* Почти черный фон */
+    justify-content: center;
+    align-items: center;
+}
+
+.full-photo-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 90vw; /* Максимальная ширина 90% от viewport width */
+    max-height: 90vh; /* Максимальная высота 90% от viewport height */
+    object-fit: contain; /* Изображение будет полностью видно, с сохранением пропорций */
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+    transition: opacity 0.3s;
+}
+
+.full-photo-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+    opacity: 0.8;
+    text-shadow: 0 0 5px #000;
+}
+
+.full-photo-close-btn:hover,
+.full-photo-close-btn:focus {
+    color: #e91e63; /* Акцентный цвет при наведении */
+    opacity: 1;
+}
+
+/* Адаптивность для мобильных устройств: убрать отступы */
+@media only screen and (max-width: 700px){
+    .full-photo-content {
+        width: 100%;
+        max-width: 100vw;
+    }
+}
+
+/* Адаптивность для list view */
+@media (max-width: 768px) {
+    .concert-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+    }
+
+    .concert-date {
+        width: 100%;
+        text-align: left;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 107, 149, 0.3);
+        padding-bottom: 10px;
+    }
+    
+    .concert-actions {
+        margin-top: 1rem;
+        margin-left: 0;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .concert-actions .btn-ticket,
+    .concert-actions .btn-secondary {
+        flex: 1 1 45%; /* Распределяем кнопки на две колонки */
+        text-align: center;
+    }
+}
+
+@media (max-width: 500px) {
+    .concert-actions .btn-ticket,
+    .concert-actions .btn-secondary {
+        flex: 1 1 100%; /* Полная ширина для кнопок на самых маленьких экранах */
+    }
+}

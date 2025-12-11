@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Видео - Дайте Танк</title>
+
+    <link rel="stylesheet" href="../style/mobile.css">
+    <link rel="stylesheet" href="../style/style-video.css">
+    <link rel="stylesheet" href="../style/head-and-footer.css">
+</head>
+
+<body>
+    <div class="full">
+        <header>
+            <nav>
+                <a href="../index.html">
+                    <div class="logo"><img src="../img/dayte-tank.svg" alt="Логотип группы Дайте Танк" loading="lazy">
+                    </div>
+                </a>
+                <div class="nav-links">
+                    <a href="../index.html" class="active">Главная</a>
+                    <a href="../pages/albums.html">Альбомы</a>
+                    <a href="../pages/videos.html">Видео</a>
+                    <a href="../pages/concerts.html">Концерты</a>
+                    <a href="../pages/about.html">О группе</a>
+                </div>
+                <div class="burger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-overlay"></div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="videos-hero">
+                <div class="page-title">
+                    <h1 class="videos-title">ВИДЕОГАЛЕРЕЯ</h1>
+                    <p>Клипы, живые выступления и закулисье</p>
+                </div>
+            </section>
+
+            <section id="video-gallery">
+                <div class="video-filter">
+                    <button class="filter-btn active" data-filter="all">Все</button>
+                    <button class="filter-btn" data-filter="clips">Клипы</button>
+                    <button class="filter-btn" data-filter="live">Live</button>
+                    <button class="filter-btn" data-filter="behind">Закулисье</button>
+                </div>
+
+                <div class="videos-grid">
+                    <div class="video-card" data-category="clips" data-youtube-id="YOUR_YOUTUBE_ID_1">
+                        <div class="video-thumbnail">
+                            <img src="../img/cover-1.avif" alt="Хрупко - клип">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Хрупко - официальный клип</h3>
+                            <span class="video-date">2023</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="live" data-youtube-id="YOUR_YOUTUBE_ID_2">
+                        <div class="video-thumbnail">
+                            <img src="../img/video2-thumb.jpg" alt="Живое выступление">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Живое выступление - Москва 2023</h3>
+                            <span class="video-date">2023</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="behind" data-youtube-id="YOUR_YOUTUBE_ID_3">
+                        <div class="video-thumbnail">
+                            <img src="../img/video3-thumb.jpg" alt="Запись альбома">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h3>За кулисами: запись "Хрупко"</h3>
+                            <span class="video-date">2023</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="clips" data-youtube-id="YOUR_YOUTUBE_ID_4">
+                        <div class="video-thumbnail">
+                            <img src="../img/video4-thumb.jpg" alt="Радиоактивные сны">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Радиоактивные сны - клип</h3>
+                            <span class="video-date">2021</span>
+                        </div>
+                    </div>
+
+                    <div class="video-card" data-category="live" data-youtube-id="YOUR_YOUTUBE_ID_5">
+                        <div class="video-thumbnail">
+                            <img src="../img/video5-thumb.jpg" alt="Акустический концерт">
+                            <div class="play-overlay">▶</div>
+                        </div>
+                        <div class="video-info">
+                            <h3>Акустический сет для Red Bull</h3>
+                            <span class="video-date">2022</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="video-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="video-container">
+                        <iframe id="video-frame" width="560" height="315" src="" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">Дайте Танк</div>
+                <div class="email-subscription">
+                    <input type="email" required id="email" name="email" placeholder="Ваш email" autocomplete="email">
+                    <button type="submit">Подписаться</button>
+                </div>
+                <div class="footer-links">
+                    <a href="../index.html">Главная</a>
+                    <a href="#">Музыка</a>
+                    <a href="#">Концерты</a>
+                    <a href="#">О нас</a>
+                    <a href="#">Контакты</a>
+                </div>
+                <div class="copyright">
+                    &copy; 2025 Дайте Танк. Все права защищены.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../js/videos.js"></script>
+    <script src="../js/script-1.js"></script>
+</body>
+
+</html>

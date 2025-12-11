@@ -1,0 +1,231 @@
+/* ==================================== */
+/* Стили для страницы Видео (videos.html) */
+/* ==================================== */
+
+#videos-hero {
+    padding: clamp(2rem, 5vw, 4rem) 20px;
+    text-align: center;
+}
+
+.videos-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 15px rgba(255, 107, 149, 0.7);
+    font-weight: 700;
+}
+
+.page-title p {
+    color: var(--text-gray);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 2rem;
+}
+
+/* ------------------- */
+/* Фильтры */
+/* ------------------- */
+
+.video-filter {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 20px;
+    border: 2px solid var(--primary);
+    border-radius: 25px;
+    background: transparent;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+    font-family: inherit;
+}
+
+.filter-btn:hover {
+    background: rgba(255, 107, 149, 0.1);
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: var(--bg-dark);
+    box-shadow: 0 0 10px rgba(255, 107, 149, 0.5);
+}
+
+/* ------------------- */
+/* Видеогалерея (Grid) */
+/* ------------------- */
+
+#video-gallery {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.videos-grid {
+    display: grid;
+    /* 3 колонки на больших экранах */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+.video-card {
+    background: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 107, 149, 0.1);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 107, 149, 0.3);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    /* Соотношение сторон 16:9 */
+    padding-top: 56.25%; 
+}
+
+.video-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: var(--primary);
+    opacity: 0;
+    transition: opacity 0.3s;
+    text-shadow: 0 0 15px var(--primary);
+}
+
+.video-thumbnail:hover .play-overlay {
+    opacity: 1;
+}
+
+.video-info {
+    padding: 15px;
+}
+
+.video-info h3 {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    margin-bottom: 5px;
+    text-shadow: 0 0 2px var(--text-light);
+}
+
+.video-date {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-top: 5px;
+}
+
+
+/* ------------------- */
+/* Модальное окно (Попап) */
+/* ------------------- */
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed;
+    z-index: 200; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    margin: 10% auto; 
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    background: var(--bg-dark);
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(255, 107, 149, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: scale(0.9);}
+    to {opacity: 1; transform: scale(1);}
+}
+
+.close-modal {
+    color: var(--primary);
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Соотношение 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--primary);
+    border-radius: 5px;
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .videos-grid {
+        /* 2 колонки на планшетах */
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    }
+}
+@media (max-width: 500px) {
+    .videos-grid {
+        /* 1 колонка на мобильных */
+        grid-template-columns: 1fr; 
+    }
+    .filter-btn {
+        padding: 8px 15px;
+        font-size: 0.8rem;
+    }
+}

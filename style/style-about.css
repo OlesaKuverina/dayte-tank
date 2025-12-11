@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #ff6b95; /* Розовый акцент */
+    --secondary: #ffd166;
+    --bg-dark: #0a0a0a;
+    --bg-card: rgba(15, 15, 15, 0.9);
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+}
+
+/* Сброс и Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Orbitron', monospace;
+    background: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+}
+
+/* Общие секции */
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2, h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255, 107, 149, 0.2);
+}
+
+/* --- Секция Героя --- */
+#about-hero {
+    min-height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0,0,0,0.7), var(--bg-dark)), 
+                url('../../project/img/about-hero-bg.jpg') center/cover; /* ДОБАВИТЬ ФОТО! */
+}
+
+.page-title p {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+/* --- Секция Участников (Grid) --- */
+#band-members {
+    text-align: center;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.member-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 107, 149, 0.2);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid var(--primary);
+}
+
+.member-card h3 {
+    margin-bottom: 5px;
+    color: var(--text-light);
+    font-size: 1.4rem;
+}
+
+.member-card .role {
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+/* --- Секция История (Шкала Времени) --- */
+.timeline-container {
+    margin-top: 40px;
+    background: #151515;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.timeline-points {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 10px;
+    /* Линия шкалы времени */
+    border-bottom: 2px solid var(--text-gray); 
+}
+
+.point {
+    background: none;
+    border: none;
+    color: var(--text-gray);
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 5px 10px;
+    transition: color 0.3s, transform 0.3s;
+    position: relative;
+    z-index: 10;
+}
+
+.point.active {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+/* Кружок активной точки */
+.point.active::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+.timeline-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.timeline-content h3 {
+    text-align: left;
+    color: var(--secondary);
+    font-size: 1.6rem;
+}
+
+.timeline-content p {
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .timeline-points {
+        flex-wrap: wrap;
+        gap: 15px;
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+    .point {
+        font-size: 1rem;
+        padding: 5px;
+    }
+    .point.active::after {
+        bottom: -5px;
+    }
+    .press-grid {
+        grid-template-columns: 1fr;
+    }
+}

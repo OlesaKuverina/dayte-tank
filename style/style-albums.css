@@ -1,0 +1,142 @@
+/* ==================================== */
+/* Стили для страницы Альбомов (albums.html) */
+/* ==================================== */
+
+#albums {
+    padding: clamp(2rem, 5vw, 4rem) 0;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.albums-title {
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 4rem;
+    text-shadow: 0 0 15px rgba(255, 107, 149, 0.7);
+    font-weight: 700;
+}
+
+/* Настройка Grid-сетки */
+.albums-grid {
+    display: grid;
+    /* Создаем 4 колонки одинаковой ширины */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px; /* Промежуток между обложками */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Стиль для каждого элемента обложки */
+.album-item {
+    position: relative; 
+    overflow: hidden; 
+    cursor: pointer;
+    display: block; 
+    border-radius: 10px; 
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    /* Убедимся, что обложки имеют квадратную форму */
+    padding-bottom: 100%; 
+    height: 0; 
+}
+
+/* Сетка для большой обложки (занимает 2x2 ячейки) */
+.album-item.large {
+    /* Занимает 2 колонки и 2 ряда */
+    grid-column: span 2; 
+    grid-row: span 2;
+}
+
+/* Изображение внутри элемента */
+.album-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    transition: filter 0.4s ease;
+}
+
+/* Эффект затемнения / Оверлей */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Начальное затемнение в стилистике сайта */
+    background-color: rgba(10, 10, 10, 0.7); 
+    opacity: 0; /* Изначально полностью прозрачен */
+    transition: opacity 0.4s ease; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    z-index: 5;
+    text-decoration: none; /* Убираем подчеркивание для текста внутри ссылки */
+}
+
+.overlay h3 {
+    margin: 0 0 5px 0;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--primary);
+    text-shadow: 0 0 5px rgba(255, 107, 149, 0.5);
+}
+
+.overlay p {
+    margin: 0;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    font-weight: 500;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Эффект при наведении */
+.album-item:hover .overlay {
+    opacity: 1; /* Показываем оверлей (полное затемнение и текст) */
+    background-color: rgba(10, 10, 10, 0.85); /* Более сильное затемнение */
+}
+
+.album-item:hover {
+    transform: scale(1.05); /* Увеличиваем элемент при наведении */
+    box-shadow: 0 15px 30px rgba(255, 107, 149, 0.2); /* Красивая тень */
+    z-index: 10; 
+}
+
+/* Медиа-запросы для адаптивности */
+
+/* Планшеты (до 1000px): делаем сетку 2x2 */
+@media (max-width: 1000px) {
+    .albums-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .album-item.large {
+        /* На планшетах большая обложка занимает 1x2, чтобы лучше вписаться */
+        grid-column: span 1; 
+        grid-row: span 2;
+    }
+}
+
+/* Мобильные устройства (до 600px): одна колонка */
+@media (max-width: 600px) {
+    .albums-grid {
+        grid-template-columns: 1fr; /* На маленьких экранах: одна колонка */
+        gap: 15px;
+    }
+    .album-item.large {
+        /* На мобильных все элементы имеют одинаковый размер 1x1 */
+        grid-column: span 1; 
+        grid-row: span 1;
+    }
+    .albums-title {
+        margin-bottom: 2rem;
+    }
+}

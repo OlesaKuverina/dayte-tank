@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Музыка - Дайте Танк</title>
+    <link rel="stylesheet" href="../../project/style/style.css">
+    <link rel="stylesheet" href="../../project/style/mobile.css">
+    <link rel="stylesheet" href="../../style/album-1.css">
+    <link rel="stylesheet" href="../../style/head-and-footer.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../../index.html">
+                <div class="logo"><img src="../../img/dayte-tank.svg" alt="Логотип группы Дайте Танк" loading="lazy">
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="../../index.html">Главная</a>
+                <a href="..\albums.html">Альбомы</a>
+                <a href="..\videos.html">Видео</a>
+                <a href="..\concerts.html">Концерты</a>
+                <a href="..\about.html">О группе</a>
+            </div>
+            <div class="burger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-overlay"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="music-player-section">
+            <h1 class="music-title">ПОСЛУШАТЬ ТРЕКИ</h1>
+
+            <div class="player-container">
+
+                <div class="audio-player">
+                    <div class="cover-art">
+                        <picture>
+                            <source srcset="../../img/cover-1.webp" type="image/webp">
+                            <img id="current-cover" src="../../img/cover-1.jpg" alt="Обложка трека">
+                        </picture>
+                    </div>
+
+                    <div class="player-controls-area">
+                        <div class="track-info">
+                            <span id="current-track-name" class="track-name">Хрупко</span>
+                            <span class="artist-name">Дайте Танк (!)</span>
+                        </div>
+
+                        <audio id="audio-element" src="../../project/audio/track-1.mp3"></audio>
+
+                        <div class="controls">
+                            <button id="prev-btn" class="control-btn prev-btn" aria-label="Предыдущий трек">
+                                ❮❮
+                            </button>
+                            <button id="play-pause-btn" class="control-btn play-pause-btn"
+                                aria-label="Воспроизвести/Пауза">
+                                ▶
+                            </button>
+                            <button id="next-btn" class="control-btn next-btn" aria-label="Следующий трек">
+                                ❯❯
+                            </button>
+                        </div>
+
+                        <div class="progress-bar-container">
+                            <input type="range" id="progress-bar" value="0" min="0" max="100">
+                            <div class="time-display">
+                                <span id="current-time">0:00</span> / <span id="duration">0:00</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="playlist-container">
+                    <h2>Плейлист альбома "Хрупко"</h2>
+
+                    <!-- Новый блок поиска -->
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Поиск песен..." autocomplete="off">
+                        <button id="clear-search" aria-label="Очистить поиск">×</button>
+                    </div>
+                    <ul id="playlist">
+                        <li class="track-item" data-src="../../project/audio/track-1.mp3" data-name="Конец"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">01.</span> Конец
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-2.mp3" data-name="М"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">02.</span> М
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-3.mp3" data-name="Фамилия"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">03.</span> Фамилия
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-4.mp3" data-name="Просьба"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">04.</span> Просьба
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Штрих"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">05.</span> Штрих
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Пунктир"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">06.</span> Пунктир
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Рекурсия"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">07.</span> Рекурсия
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Эфир"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">08.</span> Эфир
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Сюрприз"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">09.</span> Сюрприз
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Гармония"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">10.</span> Гармония
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Логика"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">11.</span> Логика
+                        </li>
+                        <li class="track-item" data-src="../../project/audio/track-5.mp3" data-name="Путь"
+                            data-cover="../../project/img/cover-1.jpg">
+                            <span class="track-number">12.</span> Путь
+                        </li>
+                    </ul>
+                    <div id="no-results" class="no-results">
+                        Песни не найдены. Попробуйте другой запрос.
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Дайте Танк</div>
+            <div class="email-subscription">
+                <input type="email" required id="email" name="email" placeholder="Ваш email" autocomplete="email">
+                <button type="submit">Подписаться</button>
+            </div>
+            <div class="footer-links">
+                <a href="../../project/index.html">Главная</a>
+                <a href="#">Музыка</a>
+                <a href="#">Концерты</a>
+                <a href="#">О нас</a>
+                <a href="#">Контакты</a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Дайте Танк. Все права защищены.
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/music-player.js"></script>
+    <script src="../../js/script-1.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+:root {
+    --primary: #ff6b95;
+    --secondary: #ffd166;
+    --bg-dark: #0a0a0a;
+    --bg-card: rgba(15, 15, 15, 0.9);
+    --text-light: #ffffff;
+    --text-gray: #cccccc;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background: url(../img/html_404.jpg) no-repeat;
+    background-size: cover;
+    /* Масштабирует картинку сохраняя пропорции */
+}
+
+.over {
+    background: rgba(0, 0, 0, 0.7);
+    /* Цвет фона и значение прозрачности */
+    position: absolute;
+    /* Абсолютное позиционирование */
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    /* Отступы от краев браузера */
+}
+
+.error-404 {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 10em;
+    color: #fcf9f9;
+    position: relative;
+    z-index: 2;
+}
+
+.notfound {
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    position: relative;
+    /* Относительное позиционирование */
+    z-index: 2;
+    /* Порядок наложения элемента по слоям в глубину */
+}
+
+.notfound a {
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.notfound a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
